@@ -27,19 +27,14 @@ npm install
 Create a `.env` file with the following variables:
 
 ```
-GEMINI_API_KEY=
-SUPABASE_URL=
-SUPABASE_API_KEY=
-
 VITE_GEMINI_API_KEY=
 VITE_SUPABASE_URL=
 VITE_SUPABASE_API_KEY=
 ```
 
-The non-`VITE_` variables are used by the Node ingestion script
-(`index.js`), and the `VITE_`-prefixed variables are used by the browser app
-(`src/config/browserConfig.js`), since Vite only exposes prefixed env vars
-to client code.
+These are used by the browser app (`src/config/browserConfig.js`) and must
+be `VITE_`-prefixed, since Vite only exposes prefixed env vars to client
+code.
 
 (Re)populate the vector store once, whenever `movies.txt` changes:
 
